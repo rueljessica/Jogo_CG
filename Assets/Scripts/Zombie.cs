@@ -29,6 +29,7 @@ public class Zombie : MonoBehaviour {
 
     void Update() {
         followPlayer();
+
     }
 
     private void followPlayer() {
@@ -36,5 +37,4 @@ public class Zombie : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, zombieVelocity * Time.deltaTime);
         }
     }
-
 }
