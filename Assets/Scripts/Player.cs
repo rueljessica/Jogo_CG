@@ -2,27 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
-    [SerializeField]
-    private  Rigidbody2D rb;
-
-    [SerializeField]
-    private int moveSpeed;
+public class Player : MonoBehaviour {
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private int moveSpeed;
+    [SerializeField] private Transform groundDetector;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private int extraJump = 1;
 
     private float direction;
     private Vector3 facingRight;
     private Vector3 facingLeft;
     public bool onTheGround;
-
-    [SerializeField]
-    private Transform groundDetector;
-
-    [SerializeField]
-    private LayerMask whatIsGround;
-
-    [SerializeField]
-    private int extraJump = 1;
 
     private void Start() {
         facingRight = transform.localScale;
@@ -32,6 +22,10 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
+        if(GameManeger.Instance == null) {
+            return;
+        }
+
         onTheGround = Physics2D.OverlapCircle(groundDetector.position, 0.2f, whatIsGround);
 
         if (Input.GetButtonDown("Jump") && onTheGround == true) {

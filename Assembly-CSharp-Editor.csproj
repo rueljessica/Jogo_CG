@@ -56,8 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GabrielBissonnette\Primo - Main Menu Pack\Essentials\Editor\HierarchyWindowHeader.cs" />
-    <Compile Include="Assets\GabrielBissonnette\Primo - Main Menu Pack\Essentials\Editor\MainMenuEditor.cs" />
+    <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -731,9 +730,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{4CE4292D-F477-C898-780F-ED0F994E5FA8}</Project>
-      <Name>Assembly-CSharp</Name>
+    <ProjectReference Include="Scripts.csproj">
+      <Project>{E13ADD67-D94A-D809-8DB7-2B50385A41D5}</Project>
+      <Name>Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanTween.csproj">
+      <Project>{F98167D3-F4F4-76B2-A322-592598BB865E}</Project>
+      <Name>LeanTween</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

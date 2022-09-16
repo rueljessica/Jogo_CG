@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Transform pauseMenu;
+    [SerializeField] private Transform pauseMenu;
+
 
     void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
@@ -27,10 +29,5 @@ public class PauseMenu : MonoBehaviour {
     public void quit() {
         Debug.Log("Quit game");
         Application.Quit();
-    }
-
-    public void menu() {
-        SceneManager.LoadScene("Menu");
-        Time.timeScale = 1;
     }
 }
