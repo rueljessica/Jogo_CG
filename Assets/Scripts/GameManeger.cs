@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManeger : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManeger : MonoBehaviour
     private int maxZombiesToSpawn = 2;
     private static GameManeger instance;
     public static GameManeger Instance => instance;
+
 
     void Start() {
         instance = this;
@@ -24,7 +26,7 @@ public class GameManeger : MonoBehaviour
             var x = Random.Range(-25, 25);
             Instantiate(zombiePrefab, new Vector3(x, -13, 0), Quaternion.identity);
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         yield return SpawnZombies();
     }
 }

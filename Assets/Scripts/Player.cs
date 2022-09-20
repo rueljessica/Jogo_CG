@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     [SerializeField] private Rigidbody2D rb;
@@ -8,11 +9,13 @@ public class Player : MonoBehaviour {
     [SerializeField] private Transform groundDetector;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private int extraJump = 1;
+    [SerializeField] Animator animator;
 
     private float direction;
     private Vector3 facingRight;
     private Vector3 facingLeft;
     public bool onTheGround;
+
 
     private void Start() {
         facingRight = transform.localScale;
@@ -21,8 +24,9 @@ public class Player : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     void Update() {
-        if(GameManeger.Instance == null) {
+        if (GameManeger.Instance == null) {
             return;
         }
 
@@ -32,13 +36,30 @@ public class Player : MonoBehaviour {
             rb.velocity = Vector2.up * 12;
         }
 
-        if (Input.GetButtonDown("Jump") && onTheGround == false && extraJump>0) {
+        if (Input.GetButtonDown("Jump") && onTheGround == false && extraJump > 0) {
             rb.velocity = Vector2.up * 12;
             extraJump--;
         }
 
-        if(onTheGround) {
+        if (onTheGround) {
             extraJump = 1;
+        }
+
+        if (onTheGround) {
+            float velocityX = Mathf.Abs(this.rb.velocity.x);
+            if (velocityX > 0) {
+                this.animator.SetBool("walk", true);
+            }
+            else {
+                this.animator.SetBool("walk", false);
+            }
+        } else {
+            float velocityY = this.rb.velocity.y;
+            if (velocityY > 0) {
+                this.animator.SetBool("jump", true);
+            } else {
+                this.animator.SetBool("jump", false);
+            }
         }
 
         direction = Input.GetAxis("Horizontal");
@@ -49,5 +70,12 @@ public class Player : MonoBehaviour {
             transform.localScale = facingLeft;
         }
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            animator.SetTrigger("attack1");
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+            animator.SetTrigger("attack3");
+        }
     }
 }

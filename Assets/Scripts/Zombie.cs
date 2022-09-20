@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Zombie : MonoBehaviour {
 
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
     [SerializeField] private float distMin;
-    [SerializeField] private int energy;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Animator animator;
@@ -33,18 +33,5 @@ public class Zombie : MonoBehaviour {
         } else {
             this.rb.velocity = Vector2.zero;
         }
-
-        if(energy <= 0) {
-            animator.SetTrigger("dead");
-            Invoke("destroyBody", .5f);
-        }
-    }
-
-    public void takeDamage(int damage) {
-        energy -= damage;
-    }
-
-    private void destroyBody() {
-        Destroy(gameObject);
     }
 }
