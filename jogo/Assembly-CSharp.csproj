@@ -36,7 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Atira.cs" />
+     <Compile Include="Assets\Atirar.cs" />
+     <Compile Include="Assets\ProjetioBala.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\LeanTween\ReadMe.txt" />
@@ -594,6 +595,10 @@
       <Project>{23fb196a-7335-d72f-daa7-a457bb3ca3da}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{f2963472-c6c5-08e6-cfd1-d8f1ddd8fdd5}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{c8ec655e-e488-eee5-d6b6-7563f957d13d}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -622,6 +627,10 @@
       <Project>{1f489025-0946-7c5e-7d41-33b2af904e38}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{c045101b-b94a-6493-6738-3619452bfce7}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{fa0f6629-3df7-5aea-2cd1-6dfee2d4cd5d}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
@@ -637,14 +646,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{30ba23f1-5879-999f-03d9-4460e3d4424e}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{f2963472-c6c5-08e6-cfd1-d8f1ddd8fdd5}</Project>
-      <Name>Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{c045101b-b94a-6493-6738-3619452bfce7}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
