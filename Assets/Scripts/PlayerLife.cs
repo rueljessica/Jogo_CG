@@ -7,11 +7,6 @@ public class PlayerLife : MonoBehaviour {
 
     [SerializeField] private bool alive = true;
 
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
     void Update() {
         GameManeger.Instance.refreshScreen();
     }
@@ -28,24 +23,15 @@ public class PlayerLife : MonoBehaviour {
             GameManeger.Instance.setLives(-1);
             Invoke("loadScene", 1f);
 
-            if(GameManeger.Instance.lives >= 0)
-            {
-                Invoke("loadScene", 1f);
-            } else
-            {
+            if(GameManeger.Instance.lives <= 0) {
                 Debug.Log("Game Over!");
                 GameManeger.Instance.lives = 0;
-                Invoke("loadSceneOver", 1f);
-            }
-
+                Invoke("loadScene", 1f);
+            } 
         }
     }
 
     void loadScene() {
         SceneManager.LoadScene("Game");
-    }
-
-    void loadSceneOver() {
-        SceneManager.LoadScene("Game Over");
     }
 }

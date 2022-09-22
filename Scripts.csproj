@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />
+    <Compile Include="Assets\Scripts\Points.cs" />
     <Compile Include="Assets\Scripts\ProjetioBala.cs" />
     <Compile Include="Assets\Scripts\Zombie.cs" />
   </ItemGroup>

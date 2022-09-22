@@ -39,5 +39,10 @@ public class Zombie : MonoBehaviour {
         if(collision.gameObject.tag == "Player") {
             collision.gameObject.GetComponent<PlayerLife>().loseLife();
         }
+
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
     }
 }
