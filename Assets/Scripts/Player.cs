@@ -10,22 +10,24 @@ public class Player : MonoBehaviour {
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private int extraJump = 1;
     [SerializeField] Animator animator;
+    Object bulletPrefab;
 
     private float direction;
     private Vector3 facingRight;
     private Vector3 facingLeft;
     public bool onTheGround;
 
-
     private void Start() {
         facingRight = transform.localScale;
         facingLeft = transform.localScale;
         facingLeft.x = facingLeft.x * -1;
         rb = GetComponent<Rigidbody2D>();
+        bulletPrefab = Resources.Load("Bullet");
     }
 
 
     void Update() {
+
         if (GameManeger.Instance == null) {
             return;
         }
@@ -45,37 +47,63 @@ public class Player : MonoBehaviour {
             extraJump = 1;
         }
 
-        if (onTheGround) {
+        if (onTheGround)
+        {
             float velocityX = Mathf.Abs(this.rb.velocity.x);
-            if (velocityX > 0) {
+            if (velocityX > 0)
+            {
                 this.animator.SetBool("walk", true);
             }
-            else {
+            else
+            {
                 this.animator.SetBool("walk", false);
             }
-        } else {
+        }
+        else
+        {
             float velocityY = this.rb.velocity.y;
-            if (velocityY > 0) {
+            if (velocityY > 0)
+            {
                 this.animator.SetBool("jump", true);
-            } else {
+            }
+            else
+            {
                 this.animator.SetBool("jump", false);
             }
         }
 
-        direction = Input.GetAxis("Horizontal");
-        if (direction > 0) {
-            transform.localScale = facingRight;
-        }
-        if (direction < 0) {
-            transform.localScale = facingLeft;
-        }
-        rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             animator.SetTrigger("attack1");
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
             animator.SetTrigger("attack3");
+            GameObject bullet = (GameObject)Instantiate(bulletPrefab);
+            bullet.transform.position = new Vector3(transform.position.x + .4f, transform.position.y + .2f, -1);
+        }
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("attack1")) {
+            direction = Input.GetAxis("Horizontal");
+            if (direction > 0) {
+                transform.localScale = facingRight;
+            }
+            if (direction < 0) {
+                transform.localScale = facingLeft;
+            }
+            rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
+        }
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("attack3")) {
+            direction = Input.GetAxis("Horizontal");
+            if (direction > 0) {
+                transform.localScale = facingRight;
+            }
+            if (direction < 0) {
+                transform.localScale = facingLeft;
+            }
+            rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
         }
     }
-}
+} 

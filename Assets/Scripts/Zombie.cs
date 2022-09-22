@@ -34,22 +34,10 @@ public class Zombie : MonoBehaviour {
             this.rb.velocity = Vector2.zero;
         }
     }
-}
 
-public class Inimigo : MonoBehaviour{
-    [SerializeField] private int _vida = 2;
-
-    public void Morre()
-    {
-        Destroy(gameObject);
-    }
-
-    public void RecebeDano(int dano){
-        
-        _vida -= dano;
-
-        if(_vida <= 0){
-            Morre();
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "Player") {
+            collision.gameObject.GetComponent<PlayerLife>().loseLife();
         }
     }
 }

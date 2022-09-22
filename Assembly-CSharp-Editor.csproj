@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{80F5C956-005F-FB78-9AA1-7BAC8651689D}</ProjectGuid>
+    <ProjectGuid>{8471F1D0-4DE6-6A65-79B5-FD935EAEABEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -632,6 +632,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -646,6 +649,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -662,11 +668,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Scripts.csproj">
-      <Project>{8BD8F72A-171D-6471-D033-B55403D12BCD}</Project>
+      <Project>{DF203942-C678-AFC3-895B-EC33D496C8AF}</Project>
       <Name>Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="LeanTween.csproj">
-      <Project>{CE785764-CD96-403D-6E92-5B0977FD3B88}</Project>
+      <Project>{FD279851-20C0-889F-0514-F1F36F487335}</Project>
       <Name>LeanTween</Name>
     </ProjectReference>
   </ItemGroup>
