@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E13ADD67-D94A-D809-8DB7-2B50385A41D5}</ProjectGuid>
+    <ProjectGuid>{8BD8F72A-171D-6471-D033-B55403D12BCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Scripts</AssemblyName>
@@ -57,12 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BulletPlayer.cs" />
     <Compile Include="Assets\Scripts\GameManeger.cs" />
     <Compile Include="Assets\Scripts\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -630,7 +633,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LeanTween.csproj">
-      <Project>{F98167D3-F4F4-76B2-A322-592598BB865E}</Project>
+      <Project>{CE785764-CD96-403D-6E92-5B0977FD3B88}</Project>
       <Name>LeanTween</Name>
     </ProjectReference>
   </ItemGroup>

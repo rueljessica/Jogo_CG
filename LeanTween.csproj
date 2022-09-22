@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F98167D3-F4F4-76B2-A322-592598BB865E}</ProjectGuid>
+    <ProjectGuid>{CE785764-CD96-403D-6E92-5B0977FD3B88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>LeanTween</AssemblyName>

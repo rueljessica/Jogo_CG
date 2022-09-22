@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{91281A2B-49A5-5F98-CA34-EDA01B1A5BCF}</ProjectGuid>
+    <ProjectGuid>{DF203942-C678-AFC3-895B-EC33D496C8AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Scripts</AssemblyName>
@@ -56,13 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Atirar.cs" />
     <Compile Include="Assets\Scripts\GameManeger.cs" />
     <Compile Include="Assets\Scripts\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerLife.cs" />
+    <Compile Include="Assets\Scripts\ProjetioBala.cs" />
     <Compile Include="Assets\Scripts\Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -633,7 +635,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LeanTween.csproj">
-      <Project>{562DCF70-8ED2-1775-935A-2B7AD39DFFAD}</Project>
+      <Project>{FD279851-20C0-889F-0514-F1F36F487335}</Project>
       <Name>LeanTween</Name>
     </ProjectReference>
   </ItemGroup>

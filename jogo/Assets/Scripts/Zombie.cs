@@ -34,4 +34,10 @@ public class Zombie : MonoBehaviour {
             this.rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "Player") {
+            collision.gameObject.GetComponent<PlayerLife>().loseLife();
+        }
+    }
 }

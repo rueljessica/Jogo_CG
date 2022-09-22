@@ -35,3 +35,21 @@ public class Zombie : MonoBehaviour {
         }
     }
 }
+
+public class Inimigo : MonoBehaviour{
+    [SerializeField] private int _vida = 2;
+
+    public void Morre()
+    {
+        Destroy(gameObject);
+    }
+
+    public void RecebeDano(int dano){
+        
+        _vida -= dano;
+
+        if(_vida <= 0){
+            Morre();
+        }
+    }
+}

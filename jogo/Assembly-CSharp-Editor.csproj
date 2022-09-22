@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ADBAB034-97BA-E050-225D-F29B9D0710D5}</ProjectGuid>
+    <ProjectGuid>{8471F1D0-4DE6-6A65-79B5-FD935EAEABEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -668,11 +668,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Scripts.csproj">
-      <Project>{91281A2B-49A5-5F98-CA34-EDA01B1A5BCF}</Project>
+      <Project>{DF203942-C678-AFC3-895B-EC33D496C8AF}</Project>
       <Name>Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="LeanTween.csproj">
-      <Project>{562DCF70-8ED2-1775-935A-2B7AD39DFFAD}</Project>
+      <Project>{FD279851-20C0-889F-0514-F1F36F487335}</Project>
       <Name>LeanTween</Name>
     </ProjectReference>
   </ItemGroup>

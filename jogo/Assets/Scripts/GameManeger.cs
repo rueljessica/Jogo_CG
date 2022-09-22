@@ -9,7 +9,14 @@ public class GameManeger : MonoBehaviour
     private int maxZombiesToSpawn = 2;
     private static GameManeger instance;
     public static GameManeger Instance => instance;
+    public GameManeger gm;
 
+    public Text lifeText;
+    public int lives = 3;
+
+    private void Awake() {
+        refreshScreen();
+    }
 
     void Start() {
         instance = this;
@@ -28,5 +35,16 @@ public class GameManeger : MonoBehaviour
         }
         yield return new WaitForSeconds(5f);
         yield return SpawnZombies();
+    }
+
+    public void setLives(int life) {
+        lives += life;
+        if(lives >= 0) {
+            refreshScreen();
+        }
+    }
+
+    public void refreshScreen() {
+        lifeText.text = lives.ToString();
     }
 }

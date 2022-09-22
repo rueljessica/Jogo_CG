@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - Bullet
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Zombie
   - Zombie1
   - Bullet
-  - 
+  - Life
   - 
   - 
   - 
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: Bullet
     uniqueID: 3095348757
+    locked: 0
+  - name: Ground
+    uniqueID: 2852471381
     locked: 0
